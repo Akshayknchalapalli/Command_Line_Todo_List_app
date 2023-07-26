@@ -1,0 +1,45 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>To-Do List</h1>
+
+        <form action="/" method="post">
+            <input type="text" name="title" placeholder="Task Title" required>
+            <input type="text" name="description" placeholder="Task Description" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <ul>
+            {% for task in tasks %}
+            <li>
+                <strong>{{ task['title'] }}</strong> - {{ task['description'] }} (Status: {{ task['status'] }})
+        
+                <!-- Update Form -->
+                <form action="/update_task/{{ loop.index0 }}" method="post">
+                    <input type="text" name="title" placeholder="New Title" required>
+                    <input type="text" name="description" placeholder="New Description" required>
+                    <select name="status">
+                        <option value="incomplete" {% if task['status'] == 'incomplete' %} selected {% endif %}>Incomplete</option>
+                        <option value="completed" {% if task['status'] == 'completed' %} selected {% endif %}>Completed</option>
+                        <option value="in-progress" {% if task['status'] == 'in-progress' %} selected {% endif %}>In-Progress</option>
+                    </select>
+                    <button type="submit">Update</button>
+                </form>
+        
+                <!-- Delete Form -->
+                <form action="/delete_task/{{ loop.index0 }}" method="post">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

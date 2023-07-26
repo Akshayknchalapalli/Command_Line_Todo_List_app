@@ -1,0 +1,110 @@
+/* static/style.css */
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 20px;
+  padding: 0;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Heading styles */
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff; /* Blue color for headings */
+}
+
+/* Form styles */
+form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+select {
+  margin-left: 10px;
+  max-width: 150px;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"] {
+  background-color: #007bff; /* Blue color for "Add Task" button */
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Darker shade of blue on hover */
+}
+
+button[type="button"] {
+  background-color: #ff0000; /* Red color for "Delete" and "Update" buttons */
+}
+
+button[type="button"]:hover {
+  background-color: #cc0000; /* Darker shade of red on hover */
+}
+
+/* List styles */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+li:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Form styles within list items */
+li form {
+  display: flex;
+  align-items: center;
+}
+
+/* Task status styles */
+strong {
+  margin-right: 10px;
+}
+
+.completed {
+  color: #28a745; /* Green color for completed tasks */
+}
+
+.in-progress {
+  color: #ffc107; /* Yellow color for tasks in progress */
+}
